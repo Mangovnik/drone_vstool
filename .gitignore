@@ -10,6 +10,7 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 /VSTool/[Aa]ssets/[Ss]ubmodules*
+/VSTool/[Aa]ssets/test*
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta

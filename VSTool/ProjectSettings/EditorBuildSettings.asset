@@ -8,10 +8,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/StartMenu/StartMenuScene.unity
     guid: eabef2c58773f204b96a024e9d0ada0b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/DroneScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  m_configObjects: {}
+  - enabled: 1
+    path: Assets/test/test.unity
+    guid: 31f97fa95c154464890b14e2f783419d
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 753cb040bdec91e4096e67879cdc012a,
+      type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: b8113f51a49a82446bbad8bc6e9e5016,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 02b59ddb37005cf4e8e6d4f564c4bb8f,
+      type: 2}
