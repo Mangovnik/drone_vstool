@@ -11,16 +11,26 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class ToggleMenu : MonoBehaviour
 {
     // reference to controler to listen for input on.
-    public ActionBasedController leftController;
     public GameObject rightHandRay;
+    public InputAction toggleMenuAction;
 
     // state of menu. Visible = true ; Hidden = false
     private bool isVisible = false;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
-        // Execute GripPressed when grip burron is pressed
-        leftController.selectAction.action.performed += GripPressed;
+        // Perfom GripPressed() on action;
+        toggleMenuAction.performed += GripPressed;
+    }
+
+    private void OnEnable()
+    {
+        toggleMenuAction.Enable();
+    }
+
+    private void OnDisable()
+    {
+        toggleMenuAction.Disable();
     }
 
     private void GripPressed(InputAction.CallbackContext obj)
@@ -55,9 +65,4 @@ public class ToggleMenu : MonoBehaviour
         isVisible = false;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
