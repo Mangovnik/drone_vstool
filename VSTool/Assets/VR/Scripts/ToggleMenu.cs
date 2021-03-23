@@ -10,8 +10,10 @@ using UnityEngine.XR.Interaction.Toolkit;
  */
 public class ToggleMenu : MonoBehaviour
 {
-    // reference to controler to listen for input on.
+    // Object with ray to toggle with the menu; "VR Rig/Camera Offset/Right UI Interactor"
     public GameObject rightHandRay;
+
+    // Action for toggling menu.
     public InputAction toggleMenuAction;
 
     // state of menu. Visible = true ; Hidden = false

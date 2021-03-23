@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Class snapping UI to controller.
+ */
 public class SnapUIToLeftController : MonoBehaviour
 {
     public GameObject leftController;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
