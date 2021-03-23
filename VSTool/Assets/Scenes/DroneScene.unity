@@ -6381,7 +6381,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &335907522
 Transform:
   m_ObjectHideFlags: 0
@@ -26742,7 +26742,7 @@ GameObject:
   - component: {fileID: 1417594980}
   - component: {fileID: 1417594979}
   m_Layer: 5
-  m_Name: Teleport Slider
+  m_Name: Speed Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27147,7 +27147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maximalTeleportDistance: 10
-  maximalTeleportSlider: {fileID: 0}
+  maximalTeleportSlider: {fileID: 1657958838}
 --- !u!114 &1439312025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27160,14 +27160,87 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcdcfb826c09fcb48b985eff2b2eca3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  speedSlider: {fileID: 0}
-  controls:
-    m_Name: Controls
-    m_Id: 3ffd4931-385d-4fc5-9833-2c06b1cbc3ca
-    m_Asset: {fileID: 0}
-    m_Actions: []
-    m_Bindings: []
+  speedSlider: {fileID: 1417594980}
+  horizontalMovement:
+    m_Name: Horizontal Movement
+    m_Type: 0
+    m_ExpectedControlType: Vector2
+    m_Id: 1d3fbe5d-4981-4c68-8109-9b8343b97b9e
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 3a7f2756-3afc-4856-b14c-6db67e09ba53
+      m_Path: <XRController>{LeftHand}/primary2DAxis
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Horizontal Movement
+      m_Flags: 0
+  verticalMovement:
+    m_Name: Vertical Movement
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: 8678d850-c4d6-4909-99d7-2d3938e1a376
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: e42d3946-a82f-4d5d-8200-698f617d7be6
+      m_Path: 1DAxis(whichSideWins=1)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: cfa906a9-7fff-4f40-ae5e-1a8f1eaccf67
+      m_Path: <XRController>{RightHand}/primaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 29797322-3da6-4d99-b03f-f6d451309bfb
+      m_Path: <XRController>{RightHand}/secondaryButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Vertical Movement
+      m_Flags: 8
+  slowVerticalMovement:
+    m_Name: Slow Vertical Movement
+    m_Type: 0
+    m_ExpectedControlType: Axis
+    m_Id: e861d8a2-d979-4454-acd7-5d078b60258f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 1D Axis
+      m_Id: 09cddb3a-864c-4b86-878e-4828b96c59e2
+      m_Path: 1DAxis(whichSideWins=1)
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Slow Vertical Movement
+      m_Flags: 4
+    - m_Name: negative
+      m_Id: 82b7354f-153b-4350-9da5-8cc6fa130b2c
+      m_Path: <XRController>{RightHand}/primaryTouched
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Slow Vertical Movement
+      m_Flags: 8
+    - m_Name: positive
+      m_Id: 59646748-9f11-482b-8f59-c7d417f09623
+      m_Path: <XRController>{RightHand}/secondaryTouched
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Slow Vertical Movement
+      m_Flags: 8
 --- !u!1 &1444099401
 GameObject:
   m_ObjectHideFlags: 0
@@ -30148,7 +30221,7 @@ GameObject:
   - component: {fileID: 1657958838}
   - component: {fileID: 1657958837}
   m_Layer: 5
-  m_Name: Speed Slider
+  m_Name: Teleport Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
