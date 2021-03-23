@@ -4,14 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.InputSystem;
+using System;
 
 public class CustomContinuousMovement : MonoBehaviour
 {
-    public float speed = 10.0f;
+    //public float speed = 10.0f;
     public Slider speedSlider;
 
-    public InputActionMap controls;
+    public InputAction horizontalMovement;
+    public InputAction verticalMovement;
+    public InputAction slowVerticalMovement;
 
+    private Vector3 move;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,27 +25,49 @@ public class CustomContinuousMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 tmp = controls["MoveHorizontally"].ReadValue<Vector2>();
-        Debug.Log(tmp);
-        float tmp2 = controls["MoveVertically"].ReadValue<float>();
-        Debug.Log(tmp2);
+        makeNewMoveVector();
+        moveCamera();
+    }
+
+    private void moveCamera()
+    {
+        if(move != Vector3.zero)
+        {
+            Quaternion headYaw = Quaternion.Euler(0, GetComponent<XRRig>().cameraGameObject.transform.eulerAngles.y, 0);
+            move = headYaw * move;
+            transform.Translate(move * speedSlider.value * Time.deltaTime);
+        }
+    }
+
+    private void makeNewMoveVector()
+    {
+        Vector2 horizontal = horizontalMovement.ReadValue<Vector2>();
+        float vertical = verticalMovement.ReadValue<float>();
+        float slowVertical = slowVerticalMovement.ReadValue<float>();
+
+        if(vertical == 0.0f)
+        {
+            move.Set(horizontal.x, slowVertical/3.0f, horizontal.y);
+        }
+        else
+        {
+            move.Set(horizontal.x, vertical, horizontal.y);
+        }
     }
 
     void OnDisable()
     {
         Debug.Log("Continuous disabled.");
-        controls.Disable();
+        horizontalMovement.Disable();
+        verticalMovement.Disable();
+        slowVerticalMovement.Disable();
     }
 
     private void OnEnable()
     {
         Debug.Log("Continuous enabled.");
-        controls.Enable();
-    }
-
-    public void setSpeedFromUI()
-    {
-        speed = speedSlider.value;
-        Debug.Log(speed);
+        horizontalMovement.Enable();
+        verticalMovement.Enable();
+        slowVerticalMovement.Enable();
     }
 }
