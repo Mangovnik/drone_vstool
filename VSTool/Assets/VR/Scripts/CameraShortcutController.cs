@@ -17,6 +17,7 @@ public class CameraShortcutController : MonoBehaviour
     private GameObject rig;
     private Image icon;
     private Text label;
+    private GameObject canvas;
     private float distance;
     
     private Vector3 newScale;
@@ -30,6 +31,7 @@ public class CameraShortcutController : MonoBehaviour
         newScale = new Vector3(0, 0, 0);
         newAlpha = new Color(0, 0, 0, 1);
         transform.GetComponentInChildren<Canvas>().worldCamera = rig.transform.GetComponentInChildren<Camera>();
+        canvas = transform.Find("Shortcut UI").gameObject;
     }
 
     // Update is called once per frame
@@ -96,5 +98,15 @@ public class CameraShortcutController : MonoBehaviour
     public void teleportRigToShortcut()
     {
         rig.transform.position = transform.position;
+    }
+
+    public void hideUI()
+    {
+        canvas.SetActive(false);
+    }
+
+    public void showUI()
+    {
+        canvas.SetActive(true);
     }
 }
