@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "1PASH9ABCQ9304",
         "name": "com.DefaultCompany.Drone3rdPerson",
-        "processId": 3589,
+        "processId": 3240,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -12,12 +12,18 @@
             "deviceId": "1PASH9ABCQ9304",
             "name": "com.DefaultCompany.Drone3rdPerson",
             "processId": 11372,
-            "exited": false
+            "exited": true
         },
         {
             "deviceId": "1PASH9ABCQ9304",
             "name": "com.DefaultCompany.Drone3rdPerson",
             "processId": 3589,
+            "exited": true
+        },
+        {
+            "deviceId": "1PASH9ABCQ9304",
+            "name": "com.DefaultCompany.Drone3rdPerson",
+            "processId": 3240,
             "exited": false
         }
     ],

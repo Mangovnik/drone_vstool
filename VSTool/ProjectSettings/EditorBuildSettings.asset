@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/StartMenu/StartMenuScene.unity
     guid: eabef2c58773f204b96a024e9d0ada0b
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/DroneScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/test/test.unity
     guid: 31f97fa95c154464890b14e2f783419d
   m_configObjects:
