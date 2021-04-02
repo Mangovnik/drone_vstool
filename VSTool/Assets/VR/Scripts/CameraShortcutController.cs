@@ -32,6 +32,9 @@ public class CameraShortcutController : MonoBehaviour
         newAlpha = new Color(0, 0, 0, 1);
         transform.GetComponentInChildren<Canvas>().worldCamera = rig.transform.GetComponentInChildren<Camera>();
         canvas = transform.Find("Shortcut UI").gameObject;
+
+        Vector3 tmp = rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles;
+        transform.Find("Camera View").Rotate(0.0f, tmp.y, 0.0f, Space.World);
     }
 
     // Update is called once per frame
@@ -44,7 +47,8 @@ public class CameraShortcutController : MonoBehaviour
 
     private void rotateCanvas()
     {
-        transform.LookAt(rig.transform);
+        canvas.transform.LookAt(rig.transform);
+        canvas.transform.Rotate(0.0f, 180.0f, 0.0f, Space.World);
     }
 
     private void updateDistance()
@@ -90,13 +94,19 @@ public class CameraShortcutController : MonoBehaviour
             newAlpha.a = 1.0f;
         }
 
-        transform.localScale = newScale;
+        canvas.transform.localScale = newScale;
         label.color = newAlpha;
         icon.color = newAlpha;
     }
 
     public void teleportRigToShortcut()
     {
+        Vector3 camera = new Vector3(0.0f, rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles.y, 0.0f);
+        Vector3 viewPoint = transform.Find("Camera View").eulerAngles;
+        Vector3 angle = camera - viewPoint;
+
+        GameObject.Find("Environment").transform.Rotate(angle);
+
         rig.transform.position = transform.position;
     }
 
