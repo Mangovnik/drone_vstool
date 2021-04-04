@@ -13,6 +13,8 @@ public class ToggleMenu : MonoBehaviour
     // Object with ray to toggle with the menu; "VR Rig/Camera Offset/Right UI Interactor"
     public GameObject rightHandRay;
 
+    public CameraShortcutsController cmr;
+
     // Action for toggling menu.
     public InputAction toggleMenuAction;
 
@@ -52,6 +54,9 @@ public class ToggleMenu : MonoBehaviour
         transform.Find("Base Menu").gameObject.SetActive(true);
         rightHandRay.SetActive(true);
         isVisible = true;
+
+        cmr.forward.Disable();
+        cmr.backward.Disable();
     }
 
     private void turnOffMenu()
@@ -65,6 +70,9 @@ public class ToggleMenu : MonoBehaviour
         }
 
         isVisible = false;
+
+        cmr.forward.Enable();
+        cmr.backward.Enable();
     }
 
 }

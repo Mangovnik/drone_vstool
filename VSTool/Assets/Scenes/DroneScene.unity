@@ -16074,6 +16074,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rightHandRay: {fileID: 500103276}
+  cmr: {fileID: 1536312326}
   toggleMenuAction:
     m_Name: Toggle Menu
     m_Type: 1
@@ -32474,6 +32475,38 @@ MonoBehaviour:
   rig: {fileID: 1439312022}
   shortcutPrefab: {fileID: 3213271376086354090, guid: 756826bc3e50f804bb52436e13c568c5,
     type: 3}
+  forward:
+    m_Name: Forward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: a841c976-6d2d-4c71-8294-563fcb417a4c
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 52d64a76-9467-4bf9-8056-948b638635c6
+      m_Path: <XRController>{RightHand}/triggerPressed
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Forward
+      m_Flags: 0
+  backward:
+    m_Name: Backward
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 7071a734-2c71-40c5-8763-582bd01c6282
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9c17c1fb-4be0-4633-994f-e6509eb98b4d
+      m_Path: <XRController>{LeftHand}/triggerPressed
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Backward
+      m_Flags: 0
 --- !u!1 &1541642790
 GameObject:
   m_ObjectHideFlags: 0
