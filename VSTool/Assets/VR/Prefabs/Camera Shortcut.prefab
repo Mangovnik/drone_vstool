@@ -763,6 +763,7 @@ MonoBehaviour:
   endFarRenderDistance: 250
   maxScale: 0.0004
   minScale: 0.0002
+  distance: 0
 --- !u!1 &3213271376956403523
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,7 +908,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3213271376086354088}
-        m_MethodName: Delete
+        m_MethodName: delete
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

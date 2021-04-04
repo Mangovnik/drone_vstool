@@ -18,7 +18,7 @@ public class CameraShortcutController : MonoBehaviour
     private Image icon;
     private Text label;
     private GameObject canvas;
-    private float distance;
+    public float distance;
     
     private Vector3 newScale;
     private Color newAlpha;
@@ -110,7 +110,7 @@ public class CameraShortcutController : MonoBehaviour
         rig.transform.position = transform.position;
     }
 
-    public void Delete()
+    public void delete()
     {
         Destroy(gameObject);
     }
