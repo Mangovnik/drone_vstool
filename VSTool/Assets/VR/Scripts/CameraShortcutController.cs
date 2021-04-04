@@ -110,6 +110,11 @@ public class CameraShortcutController : MonoBehaviour
         rig.transform.position = transform.position;
     }
 
+    public void Delete()
+    {
+        Destroy(gameObject);
+    }
+
     public void hideUI()
     {
         canvas.SetActive(false);

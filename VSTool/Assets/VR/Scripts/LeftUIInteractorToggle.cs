@@ -6,37 +6,50 @@ using UnityEngine.InputSystem;
 
 public class LeftUIInteractorToggle : MonoBehaviour
 {
-    public GameObject leftUIInteractor;
+    public GameObject leftUIInteractor1;
+    public GameObject leftUIInteractor2;
 
-    public InputAction showInteractor;
-    public InputAction hideInteractor;
+    public InputAction showInteractor1;
+    public InputAction showInteractor2;
 
     private void OnEnable()
     {
-        showInteractor.Enable();
-        hideInteractor.Enable();
+        showInteractor1.Enable();
+        showInteractor2.Enable();
     }
 
     private void OnDisable()
     {
-        showInteractor.Disable();
-        hideInteractor.Disable();
+        showInteractor1.Disable();
+        showInteractor2.Disable();
     }
 
     private void Awake()
     {
-        showInteractor.performed += showInteractorAction;
-        hideInteractor.performed += hideInteractorAction;
-        showInteractor.canceled += hideInteractorAction;
+        showInteractor1.performed += showInteractorAction1;
+        showInteractor1.canceled += hideInteractorAction1;
+
+        showInteractor2.performed += showInteractorAction2;
+        showInteractor2.canceled += hideInteractorAction2;
     }
 
-    private void hideInteractorAction(InputAction.CallbackContext obj)
+    private void showInteractorAction2(InputAction.CallbackContext obj)
     {
-        leftUIInteractor.SetActive(false);
+        leftUIInteractor2.SetActive(true);
     }
 
-    private void showInteractorAction(InputAction.CallbackContext obj)
+    private void hideInteractorAction2(InputAction.CallbackContext obj)
     {
-        leftUIInteractor.SetActive(true);
+        leftUIInteractor2.SetActive(false);
+    }
+
+    private void hideInteractorAction1(InputAction.CallbackContext obj)
+    {
+        leftUIInteractor1.SetActive(false);
+    }
+
+    private void showInteractorAction1(InputAction.CallbackContext obj)
+    {
+        leftUIInteractor1.SetActive(true);
     }
 }
