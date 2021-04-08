@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,11 +9,36 @@ public class CameraController : MonoBehaviour {
     private bool right = false;
     private bool up = false;
     private bool down = false;
+
+    private bool freeCam = false;
+
+    public GameObject DroneGameObject;
+    public GameObject DroneModel;
+    public float CameraSpeed = 0.5f;
 	
 	// Update is called once per frame
 
     public void reset(){
         transform.localRotation = Quaternion.Euler(new Vector3(0,0,0));
+    }
+
+    public void SetCokcpitMode()
+    {
+        transform.SetParent(DroneModel.transform);
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localEulerAngles = new Vector3(0, -90, 0);
+    }
+
+    public void SetStandardMode()
+    {
+        transform.SetParent(DroneGameObject.transform);
+        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localEulerAngles = new Vector3(0, 0, 0);
+    }
+
+    public void SetFreeMode()
+    {
+        transform.parent = null;
     }
 
 	void Update () {
@@ -27,6 +52,9 @@ public class CameraController : MonoBehaviour {
         // }
         // else
         // {
+
+        HandleCameraInputKeys();
+
             //movement
             float moveVertical = 0;
             float moveHorizontal = 0;
@@ -42,7 +70,7 @@ public class CameraController : MonoBehaviour {
             if(right)
                 moveHorizontal += 0.5f;
 
-            Vector3 rotace = new Vector3(moveVertical * -0.8f, moveHorizontal * 0.8f, 0);
+            Vector3 rotace = new Vector3(moveVertical * -CameraSpeed, moveHorizontal * CameraSpeed, 0);
 
             //move up 
             // if (transform.localRotation.eulerAngles.x >= 90.0f && transform.localRotation.eulerAngles.x < 180.0f && rotace.x > 0) rotace.x = 0;
@@ -58,6 +86,14 @@ public class CameraController : MonoBehaviour {
 
 
         // }
+    }
+
+    private void HandleCameraInputKeys()
+    {
+        float moveVertical = Input.GetAxis("CameraRotateY");
+        float moveHorizontal = Input.GetAxis("CameraRotateX");
+        Vector3 rotace = new Vector3(moveVertical * -CameraSpeed, moveHorizontal * CameraSpeed, 0);
+        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles + rotace);
     }
 
     public void upHold(){

@@ -1,25 +1,18 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraZoom : MonoBehaviour
 {
-    //bool isUpButtonPressed = false;
-    //bool isDownButtonPressed = false;
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
-
     private bool zoom;
     private bool unzoom;
-    public GameObject drone;
+    public float ZoomSpeed = 0.2f;
 
     // Update is called once per frame
     void Update()
     {
+        HandleCameraInputKeys();
+
         float scroll=0;
 
         /*
@@ -39,7 +32,21 @@ public class CameraZoom : MonoBehaviour
             scroll -=0.1f;
         if ((transform.localPosition.z > -7 || scroll > 0) && (transform.localPosition.z < 0.8f || scroll < 0))
         {
-            transform.localPosition = transform.localPosition + new Vector3(0, 0, scroll * 0.4f);
+            transform.localPosition = transform.localPosition + new Vector3(0, 0, scroll * ZoomSpeed);
+        }
+    }
+
+    private void HandleCameraInputKeys()
+    {
+        float zoomIn = Input.GetAxis("CameraZoomIn");
+        float zoomOut = Input.GetAxis("CameraZoomOut");
+        if(zoomIn > 0)
+        {
+            transform.localPosition = transform.localPosition + new Vector3(0, 0, zoomIn * ZoomSpeed);
+        }
+        if(zoomOut > 0)
+        {
+            transform.localPosition = transform.localPosition + new Vector3(0, 0, -zoomOut * ZoomSpeed);
         }
     }
 
