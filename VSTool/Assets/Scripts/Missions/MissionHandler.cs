@@ -288,6 +288,9 @@ public class MissionHandler : Singleton<MissionHandler>
         int i = 0;
         foreach (var drone in mission.drones)
         {
+            if (i >= Drones.drones.Count) {
+                break;
+            }
             //Check if mission isnt over
             if(drone.checkpoints.Count > 0){
                 Vector3 dronePosition = Drones.drones[i].DroneGameObject.transform.position;
