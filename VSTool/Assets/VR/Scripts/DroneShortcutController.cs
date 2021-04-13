@@ -99,6 +99,8 @@ public class DroneShortcutController : MonoBehaviour
     public void teleportRigToShortcut()
     {
         rig.transform.position = transform.position;
+        rig.transform.GetComponent<RigLockToDrone>().drone = transform;
+        rig.transform.GetComponent<RigLockToDrone>().locked = true;
     }
 
     public void hideUI()
