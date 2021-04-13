@@ -43719,6 +43719,7 @@ GameObject:
   - component: {fileID: 678072205738308487}
   - component: {fileID: 678072205738308486}
   - component: {fileID: 678072205738308484}
+  - component: {fileID: 678072205738308492}
   m_Layer: 0
   m_Name: VR Rig
   m_TagString: Untagged
@@ -43744,6 +43745,36 @@ MonoBehaviour:
   m_TrackingOriginMode: 2
   m_TrackingSpace: 3
   m_CameraYOffset: 1.36144
+--- !u!114 &678072205738308492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678072205738308490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08c81134aa9781244bef33f0ff7cce96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  locked: 0
+  drone: {fileID: 0}
+  unlock:
+    m_Name: Unlock
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: c586c792-52d5-4b90-b1ff-7255fb47fc09
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 9e4e42a5-2d03-4538-8c56-ec509fcb8701
+      m_Path: <XRController>{RightHand}/gripButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Unlock
+      m_Flags: 0
 --- !u!222 &678072205799965720
 CanvasRenderer:
   m_ObjectHideFlags: 0
