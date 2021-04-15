@@ -16605,6 +16605,7 @@ GameObject:
   - component: {fileID: 764988003}
   - component: {fileID: 764988002}
   - component: {fileID: 764988001}
+  - component: {fileID: 764988005}
   m_Layer: 5
   m_Name: Drone Shortcut List
   m_TagString: Untagged
@@ -16713,6 +16714,20 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &764988005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 764987999}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ad9708142c91ba4aabb1052c3274529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 8687655472918275285, guid: 537c6e374b612fb49afac9c575f952d1,
+    type: 3}
 --- !u!1 &765929701
 GameObject:
   m_ObjectHideFlags: 0
@@ -28597,8 +28612,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca6c224dd345e14380e047150f89c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rig: {fileID: 0}
-  shortcutPrefab: {fileID: 0}
 --- !u!1 &1425315810
 GameObject:
   m_ObjectHideFlags: 0
