@@ -516,7 +516,7 @@ GameObject:
   - component: {fileID: 4436323472982427957}
   - component: {fileID: 6175262926394791302}
   - component: {fileID: 6352758350372004830}
-  - component: {fileID: 225579549465763981}
+  - component: {fileID: 7278589999707231479}
   m_Layer: 5
   m_Name: DroneShortcutItem
   m_TagString: Untagged
@@ -583,7 +583,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &225579549465763981
+--- !u!114 &7278589999707231479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -592,7 +592,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8687655472918275285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e79b8967b7b375e46b25ba44f7734c62, type: 3}
+  m_Script: {fileID: 11500000, guid: 1dd6f33a648826c47b22b1640b894b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   shortcut: {fileID: 0}

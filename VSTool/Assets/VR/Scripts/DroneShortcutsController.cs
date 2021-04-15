@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class DroneShortcutsController : MonoBehaviour
 {
-    public Transform rig;
-    public GameObject shortcutPrefab;
-
     public void hideShortcuts()
     {
         DroneShortcutController[] drones = FindObjectsOfType<DroneShortcutController>();
