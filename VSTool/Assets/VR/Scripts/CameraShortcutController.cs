@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,6 +18,7 @@ public class CameraShortcutController : MonoBehaviour
     private Image icon;
     private Text label;
     private GameObject canvas;
+    private Transform frustrum;
     public float distance;
     
     private Vector3 newScale;
@@ -32,6 +33,7 @@ public class CameraShortcutController : MonoBehaviour
         newAlpha = new Color(0, 0, 0, 1);
         transform.GetComponentInChildren<Canvas>().worldCamera = rig.transform.GetComponentInChildren<Camera>();
         canvas = transform.Find("Shortcut UI").gameObject;
+        frustrum = transform.Find("Camera View/frustrum");
 
         Vector3 tmp = rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles;
         transform.Find("Camera View").Rotate(0.0f, tmp.y, 0.0f, Space.World);
@@ -97,6 +99,13 @@ public class CameraShortcutController : MonoBehaviour
         canvas.transform.localScale = newScale;
         label.color = newAlpha;
         icon.color = newAlpha;
+        frustrum.localScale = newScale * 250;
+        for (int i = 0; i < frustrum.childCount; i++) {
+            frustrum.GetChild(i).GetComponent<LineRenderer>().startColor = newAlpha;
+            frustrum.GetChild(i).GetComponent<LineRenderer>().endColor = newAlpha;
+            frustrum.GetChild(i).GetComponent<LineRenderer>().startWidth = tmp * 4;
+            frustrum.GetChild(i).GetComponent<LineRenderer>().endWidth = tmp * 4;
+        }
     }
 
     public void teleportRigToShortcut()
