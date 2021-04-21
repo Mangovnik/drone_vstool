@@ -19,6 +19,8 @@ public class CameraShortcutController : MonoBehaviour
     private Text label;
     private GameObject canvas;
     private Transform frustrum;
+    private GameObject cameraPreview;
+    private GameObject camera;
     public float distance;
     
     private Vector3 newScale;
@@ -34,6 +36,8 @@ public class CameraShortcutController : MonoBehaviour
         transform.GetComponentInChildren<Canvas>().worldCamera = rig.transform.GetComponentInChildren<Camera>();
         canvas = transform.Find("Shortcut UI").gameObject;
         frustrum = transform.Find("Camera View/frustrum");
+        cameraPreview = GameObject.Find("VR UI/Left Controller UI").GetComponent<CameraPreviewHolder>().cameraPreviewCanvas;
+        camera = transform.Find("Camera View/Camera").gameObject;
 
         Vector3 tmp = rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles;
         transform.Find("Camera View").Rotate(0.0f, tmp.y, 0.0f, Space.World);
@@ -45,6 +49,16 @@ public class CameraShortcutController : MonoBehaviour
         updateDistance();
         rotateCanvas();
         scaleCanvas();
+    }
+
+    public void pointerEnterAction() {
+        camera.SetActive(true);
+        cameraPreview.SetActive(true);
+    }
+
+    public void pointerExitAction() {
+        camera.SetActive(false);
+        cameraPreview.SetActive(false);
     }
 
     private void rotateCanvas()
