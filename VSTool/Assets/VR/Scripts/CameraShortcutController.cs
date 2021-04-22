@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class CameraShortcutController : MonoBehaviour
 {
@@ -49,6 +50,14 @@ public class CameraShortcutController : MonoBehaviour
         updateDistance();
         rotateCanvas();
         scaleCanvas();
+    }
+
+    public void pointerEnterA(PointerEventData data) {
+        pointerEnterAction();
+    }
+
+    public void pointerExitA(PointerEventData data) {
+        pointerExitAction();
     }
 
     public void pointerEnterAction() {
