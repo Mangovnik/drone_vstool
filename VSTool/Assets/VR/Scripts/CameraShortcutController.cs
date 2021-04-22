@@ -41,7 +41,7 @@ public class CameraShortcutController : MonoBehaviour
         camera = transform.Find("Camera View/Camera").gameObject;
 
         Vector3 tmp = rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles;
-        transform.Find("Camera View").Rotate(0.0f, tmp.y, 0.0f, Space.World);
+        transform.Find("Camera View").Rotate(tmp.x, tmp.y, 0.0f, Space.World);
     }
 
     // Update is called once per frame
@@ -134,7 +134,8 @@ public class CameraShortcutController : MonoBehaviour
     public void teleportRigToShortcut()
     {
         Vector3 camera = new Vector3(0.0f, rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles.y, 0.0f);
-        Vector3 viewPoint = transform.Find("Camera View").eulerAngles;
+        Vector3 viewPoint = new Vector3(0.0f, 0.0f, 0.0f); 
+        viewPoint.y = transform.Find("Camera View").eulerAngles.y;
         Vector3 angle = camera - viewPoint;
 
         GameObject.Find("Environment").transform.Rotate(angle);
