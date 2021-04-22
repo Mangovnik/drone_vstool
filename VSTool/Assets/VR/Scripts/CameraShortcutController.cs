@@ -150,10 +150,12 @@ public class CameraShortcutController : MonoBehaviour
     public void hideUI()
     {
         canvas.SetActive(false);
+        frustrum.gameObject.SetActive(false);
     }
 
     public void showUI()
     {
         canvas.SetActive(true);
+        frustrum.gameObject.SetActive(true);
     }
 }
