@@ -22,6 +22,7 @@ public class CameraShortcutController : MonoBehaviour
     private Transform frustrum;
     private GameObject cameraPreview;
     private GameObject camera;
+    private Color frustrumColor;
     public float distance;
     
     private Vector3 newScale;
@@ -34,6 +35,7 @@ public class CameraShortcutController : MonoBehaviour
         icon = transform.GetComponentInChildren<Image>();
         newScale = new Vector3(0, 0, 0);
         newAlpha = new Color(0, 0, 0, 1);
+        frustrumColor = new Color(255, 0, 0, 1);
         transform.GetComponentInChildren<Canvas>().worldCamera = rig.transform.GetComponentInChildren<Camera>();
         canvas = transform.Find("Shortcut UI").gameObject;
         frustrum = transform.Find("Camera View/frustrum");
@@ -90,12 +92,14 @@ public class CameraShortcutController : MonoBehaviour
             tmp = distance * maxScale;
             newScale.Set(tmp, tmp, tmp);
             newAlpha.a = 0.0f;
+            frustrumColor.a = 0.0f;
         }
         else if (distance < startRegularRenderDistance)
         {
             tmp = distance * maxScale;
             newScale.Set(tmp, tmp, tmp);
             newAlpha.a = (distance - endNoRenderDistance) / (startRegularRenderDistance - endNoRenderDistance);
+            frustrumColor.a = newAlpha.a;
         }
         else if (distance < endRegularRenderDistance)
         {
@@ -111,12 +115,14 @@ public class CameraShortcutController : MonoBehaviour
 
             newScale.Set(tmp, tmp, tmp);
             newAlpha.a = 1.0f;
+            frustrumColor.a = newAlpha.a;
         }
         else
         {
             tmp = distance * minScale;
             newScale.Set(tmp, tmp, tmp);
             newAlpha.a = 1.0f;
+            frustrumColor.a = newAlpha.a;
         }
 
         canvas.transform.localScale = newScale;
@@ -124,8 +130,8 @@ public class CameraShortcutController : MonoBehaviour
         icon.color = newAlpha;
         frustrum.localScale = newScale * 250;
         for (int i = 0; i < frustrum.childCount; i++) {
-            frustrum.GetChild(i).GetComponent<LineRenderer>().startColor = newAlpha;
-            frustrum.GetChild(i).GetComponent<LineRenderer>().endColor = newAlpha;
+            frustrum.GetChild(i).GetComponent<LineRenderer>().startColor = frustrumColor;
+            frustrum.GetChild(i).GetComponent<LineRenderer>().endColor = frustrumColor;
             frustrum.GetChild(i).GetComponent<LineRenderer>().startWidth = tmp * 4;
             frustrum.GetChild(i).GetComponent<LineRenderer>().endWidth = tmp * 4;
         }
