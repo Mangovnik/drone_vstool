@@ -52,11 +52,11 @@ public class CameraShortcutController : MonoBehaviour
         scaleCanvas();
     }
 
-    public void pointerEnterA(PointerEventData data) {
+    public void pointerEnterDelegate(PointerEventData data) {
         pointerEnterAction();
     }
 
-    public void pointerExitA(PointerEventData data) {
+    public void pointerExitDelegate(PointerEventData data) {
         pointerExitAction();
     }
 

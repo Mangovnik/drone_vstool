@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,5 +25,13 @@ public class CameraShortcutItem : MonoBehaviour
     public void delete()
     {
         Destroy(transform.gameObject);
+    }
+
+    public void enablePreview() {
+        shortcut.pointerEnterAction();
+    }
+
+    public void disablePreview() {
+        shortcut.pointerExitAction();
     }
 }
