@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,8 @@ public class CameraShortcutsController : MonoBehaviour
     private int position = -1;
     public InputAction forward;
     public InputAction backward;
+
+    public bool awaken = false;
 
     public void hideShortcuts()
     {
@@ -52,6 +54,7 @@ public class CameraShortcutsController : MonoBehaviour
 
     private void Awake()
     {
+        awaken = true;
         forward.performed += forwardAction;
         backward.performed += backwardAction;
     }

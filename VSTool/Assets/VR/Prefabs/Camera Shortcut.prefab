@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443481983382210146}
   - component: {fileID: 829539569239833190}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5552736531204190932}
   - component: {fileID: 3170035253041574670}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -423,7 +423,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8058136904309571078}
   - component: {fileID: 6438078422437900512}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1280,7 +1280,7 @@ GameObject:
   m_Component:
   - component: {fileID: 860098240001088743}
   - component: {fileID: 4478912217628754985}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1408,7 +1408,7 @@ GameObject:
   m_Component:
   - component: {fileID: 745326516053413667}
   - component: {fileID: 3521985969730113878}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1738,7 +1738,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3618933145445642684}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: frustrum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1829,7 +1829,7 @@ Camera:
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65303
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 8400000, guid: f1e08d3d75276804ba28ef2c79e3059e, type: 2}
   m_TargetDisplay: 0
@@ -1883,7 +1883,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4528366616144196582}
   - component: {fileID: 6070214137475736235}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2258259434124084219}
   - component: {fileID: 7832802761745806059}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2139,7 +2139,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7777668011744172307}
   - component: {fileID: 7589959396234263284}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -43,7 +43,11 @@ public class CameraShortcutController : MonoBehaviour
         camera = transform.Find("Camera View/Camera").gameObject;
 
         Vector3 tmp = rig.GetComponent<XRRig>().cameraGameObject.transform.eulerAngles;
-        transform.Find("Camera View").Rotate(tmp.x, tmp.y, 0.0f, Space.World);
+
+        bool awaken = transform.parent.GetComponent<CameraShortcutsController>().awaken;
+        if (awaken) {
+            transform.Find("Camera View").Rotate(tmp.x, tmp.y, 0.0f, Space.World);
+        }        
     }
 
     // Update is called once per frame
