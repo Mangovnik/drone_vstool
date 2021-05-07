@@ -145,6 +145,7 @@ public class CameraShortcutControllerTest : MonoBehaviour
         Vector3 angle = camera - viewPoint;
 
         GameObject.Find("Environment").transform.Rotate(angle);
+        GameObject.Find("Map").transform.Rotate(angle);
 
         rig.transform.position = transform.position;
     }

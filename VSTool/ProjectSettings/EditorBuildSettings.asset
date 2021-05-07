@@ -14,9 +14,12 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/VR/Scenes/DroneScene VR.unity
     guid: e1358c6d83636b440a1c48e2c75bf210
+  - enabled: 1
+    path: Assets/VR/Scenes/DroneScene VR 1.unity
+    guid: 066ea43f269c51b49932b2b0282be862
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 753cb040bdec91e4096e67879cdc012a,
       type: 2}
