@@ -46,7 +46,7 @@ public class CameraShortcutController : MonoBehaviour
 
         bool awaken = transform.parent.GetComponent<CameraShortcutsController>().awaken;
         if (awaken) {
-            transform.Find("Camera View").Rotate(tmp.x, tmp.y, 0.0f, Space.World);
+            transform.Find("Camera View").rotation = rig.GetComponent<XRRig>().cameraGameObject.transform.rotation;
         }        
     }
 
